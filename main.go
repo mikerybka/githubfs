@@ -48,7 +48,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.Method == http.MethodDelete {
-		err := del(orgID, repoID, filePath, r.Body)
+		err := del(orgID, repoID, filePath)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
